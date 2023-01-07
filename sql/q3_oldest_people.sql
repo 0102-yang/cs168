@@ -1,9 +1,9 @@
-sqlite> select name, strftime("%Y", "now")-born as age
-   ...> from people
-   ...> where died is null
-   ...> and born >= 1900
-   ...> order by age desc, name asc
-   ...> limit 20;
+select name, strftime("%Y", "now")-born as age
+from people
+where died is null
+and born >= 1900
+order by age desc, name asc
+limit 20;
 
 C. Dickerman Williams|123
 Charles Sherrin|123

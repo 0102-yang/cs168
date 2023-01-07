@@ -1,11 +1,11 @@
-sqlite> select p.name as name, count(1) as num_appearances
-   ...> from people as p join crew as c
-   ...> on p.person_id = c.person_id
-   ...> group by p.name
-   ...> order by num_appearances desc
-   ...> limit 20;
+select p.name as name, count(1) as num_appearances
+from people as p join crew as c
+on p.person_id = c.person_id
+group by p.name
+order by num_appearances desc
+limit 20;
 
-Nivedita Basu|12564
+/* Nivedita Basu|12564
 Joel Beckerman|11286
 Vic Sotto|10626
 Ed McMahon|10153
@@ -24,4 +24,4 @@ Vaidehi Ramamurthy|6806
 Sharad Tripathi|6649
 Adrián Suar|5939
 Mrinal Jha|5869
-Jada Rowland|5763
+Jada Rowland|5763 */

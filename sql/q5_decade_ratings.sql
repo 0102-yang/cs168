@@ -1,12 +1,12 @@
-sqlite> select (t.premiered / 10 * 10) || "s" as decade, round(avg(r.rating), 2) as avg_rating,
-   ...> round(max(r.rating), 2), round(min(r.rating), 2), count(1)
-   ...> from titles as t join ratings as r
-   ...> on t.title_id = r.title_id
-   ...> where t.premiered is not null
-   ...> group by decade
-   ...> order by avg_rating desc, decade asc;
+select (t.premiered / 10 * 10) || "s" as decade, round(avg(r.rating), 2) as avg_rating,
+round(max(r.rating), 2), round(min(r.rating), 2), count(1)
+from titles as t join ratings as r
+on t.title_id = r.title_id
+where t.premiered is not null
+group by decade
+order by avg_rating desc, decade asc;
 
-2020s|7.08|10.0|1.0|18825
+/* 2020s|7.08|10.0|1.0|18825
 2010s|7.05|10.0|1.0|73097
 1960s|6.88|10.0|1.0|7423
 2000s|6.85|10.0|1.0|39267
@@ -21,4 +21,4 @@ sqlite> select (t.premiered / 10 * 10) || "s" as decade, round(avg(r.rating), 2)
 1870s|5.25|5.3|5.2|2
 1880s|5.15|6.5|4.4|13
 1900s|5.05|8.8|2.5|417
-1890s|4.41|7.6|2.0|437
+1890s|4.41|7.6|2.0|437 */
