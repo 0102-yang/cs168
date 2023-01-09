@@ -1,3 +1,8 @@
+/* Q4 [10 points] (q4_crew_appears_most):
+Find the people who appear most frequently as crew members.
+Details: Print the names and number of appearances of the 20 people with the most crew appearances ordered by their number of appearances in a descending fashion.
+Your output should look like this: NAME|NUM_APPEARANCES */
+
 select p.name as name, count(1) as num_appearances
 from people as p join crew as c
 on p.person_id = c.person_id

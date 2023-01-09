@@ -1,3 +1,9 @@
+/* Q10 [15 points] (q10_house_of_the_dragon):
+Concatenate all the unique titles for the TV Series "House of the Dragon" as a string of comma-separated values in alphabetical order of the titles.
+Details: Find all the unique dubbed titles for the new TV show "House of the Dragon" and order them alphabetically. Print a single string containing all these titles separated by commas.
+Hint: You might find Recursive CTEs useful.
+Note: Two titles are different even if they differ only in capitalization. Elements in the comma-separated value result should be separated with both a comma and a space, e.g. "foo, bar". */
+
 with akas_titles as (
     select row_number() over(order by title asc) as row_number, *
     from (
